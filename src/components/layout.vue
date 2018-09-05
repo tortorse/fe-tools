@@ -38,7 +38,7 @@
         <slot></slot>
       </a-layout-content>
       <a-layout-footer style="textAlign: center">
-        Created by <a href="https://www.tortorse.com">tortorse</a>
+        FE tools ©2016 Created by <a href="https://www.tortorse.com">tortorse</a>
       </a-layout-footer>
     </a-layout>
   </a-layout>
@@ -52,7 +52,7 @@ export default {
     'a-layout-sider': Layout.Sider,
     'a-layout-header': Layout.Header,
     'a-layout-content': Layout.Content,
-    'a-layout-footer': Layout.footer,
+    'a-layout-footer': Layout.Footer,
     'a-affix': Affix,
     'a-icon': Icon,
     'a-menu': Menu,
