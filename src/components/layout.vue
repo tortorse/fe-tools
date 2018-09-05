@@ -80,9 +80,7 @@ export default {
       }
     },
     changeLanguage () {
-      console.log(this.$i18n.locale)
       this.$i18n.locale = this.$i18n.locale === 'zh-CN' ? 'en-US' : 'zh-CN'
-      console.log(this.$i18n.locale)
     }
   }
 }
