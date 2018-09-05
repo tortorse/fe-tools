@@ -27,7 +27,8 @@ Vue.use(VueAnalytics, {
 const i18n = new VueI18n({
   locale: 'zh-CN',
   messages: {
-    'zh-CN': require('./locale/zh-cn')
+    'zh-CN': require('./locale/zh-cn'),
+    'en-US': require('./locale/en-us')
   }
 })
 

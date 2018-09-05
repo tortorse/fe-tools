@@ -24,12 +24,15 @@
       </a-layout-sider>
     </a-affix>
     <a-layout>
-      <a-layout-header style="background: #fff; padding: 0">
+      <a-layout-header style="background: #fff; padding: 0;display: flex;justify-content: space-between;">
         <a-icon
           class="trigger"
           :type="collapsed ? 'menu-unfold' : 'menu-fold'"
           @click="() => collapsed = !collapsed"
         />
+        <div style="padding-right:24px;">
+          <a-button @click="changeLanguage">{{ $t('m.app.language') }}</a-button>
+        </div>
       </a-layout-header>
       <a-layout-content :style="{ padding: '24px', minHeight: '280px' }">
         <slot></slot>
@@ -38,7 +41,7 @@
   </a-layout>
 </template>
 <script>
-import { Layout, Affix, Icon, Menu, Row, Col } from 'ant-design-vue'
+import { Layout, Affix, Icon, Menu, Row, Col, Button } from 'ant-design-vue'
 export default {
   name: 'layout',
   components: {
@@ -51,7 +54,8 @@ export default {
     'a-menu': Menu,
     'a-menu-item': Menu.Item,
     'a-row': Row,
-    'a-col': Col
+    'a-col': Col,
+    'a-button': Button
   },
   data () {
     return {
@@ -74,6 +78,11 @@ export default {
       } else if (e.key === '2') {
         this.$router.replace({ name: 'javascript' })
       }
+    },
+    changeLanguage () {
+      console.log(this.$i18n.locale)
+      this.$i18n.locale = this.$i18n.locale === 'zh-CN' ? 'en-US' : 'zh-CN'
+      console.log(this.$i18n.locale)
     }
   }
 }

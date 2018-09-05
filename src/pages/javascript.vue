@@ -15,7 +15,6 @@
     <a-col :span="4">
       <a-row type="flex" justify="center" style="margin-top:64px;">
         <a-button @click="beautify" style="width:100%;margin-bottom:8px;" :disabled="disabled">{{ $t('m.javascript.beautifyButton')}}</a-button>
-        <a-button @click="compress" style="width:100%;margin-bottom:8px;" :disabled="disabled">{{ $t('m.javascript.compressButton') }}</a-button>
         <a-button @click="reset" style="width:100%;" :disabled="disabled">{{ $t('m.javascript.resetButton') }}</a-button>
       </a-row>
     </a-col>
@@ -60,11 +59,7 @@ export default {
   },
   methods: {
     beautify () {
-      this.outputJs = beautify.js(this.inputJs)
-    },
-    compress () {
-      // let output = new CleanCSS().minify(this.inputJs)
-      // this.outputJs = output.styles
+      this.outputJs = beautify.js(this.inputJs, { 'indent_size': 2, 'indent_char': ' ' })
     },
     reset () {
       this.inputJs = ''
