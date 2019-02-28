@@ -5,7 +5,6 @@ import App from './App'
 import router from './router'
 import VueI18n from 'vue-i18n'
 import VueAnalytics from 'vue-analytics'
-import 'ant-design-vue/dist/antd.min.css'
 Vue.config.productionTip = false
 
 Vue.use(VueI18n)
