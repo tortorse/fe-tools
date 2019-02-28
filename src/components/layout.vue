@@ -12,11 +12,11 @@
           <h1 v-if="!collapsed">{{ $t('m.app.name') }}</h1>
         </div>
         <a-menu theme="dark" model="inline" @click="handleClick" v-model="selected">
-          <a-menu-item key="1">
+          <a-menu-item key="css">
             <a-icon type="copyright" />
             <span>{{ $t('m.menu.css')}}</span>
           </a-menu-item>
-          <a-menu-item key="2">
+          <a-menu-item key="javascript">
             <a-icon type="code-o" />
             <span>{{ $t('m.menu.javascript')}}</span>
           </a-menu-item>
@@ -44,7 +44,7 @@
   </a-layout>
 </template>
 <script>
-import { Layout, Affix, Icon, Menu, Row, Col, Button } from 'ant-design-vue'
+import { Layout, Affix, Icon, Menu, Button } from 'ant-design-vue'
 export default {
   name: 'layout',
   components: {
@@ -57,30 +57,20 @@ export default {
     'a-icon': Icon,
     'a-menu': Menu,
     'a-menu-item': Menu.Item,
-    'a-row': Row,
-    'a-col': Col,
     'a-button': Button
   },
   data () {
     return {
-      collapsed: false
-    }
-  },
-  computed: {
-    selected () {
-      if (this.$route.name === 'css') {
-        return ['1']
-      } else if (this.$route.name === 'javascript') {
-        return ['2']
-      }
+      collapsed: false,
+      selected: [this.$route.name]
     }
   },
   methods: {
     handleClick (e) {
-      if (e.key === '1') {
-        this.$router.replace({ name: 'css' })
-      } else if (e.key === '2') {
-        this.$router.replace({ name: 'javascript' })
+      if (e.key === 'css') {
+        this.$router.push({ name: 'css' })
+      } else if (e.key === 'javascript') {
+        this.$router.push({ name: 'javascript' })
       }
     },
     changeLanguage () {

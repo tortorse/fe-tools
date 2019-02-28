@@ -43,7 +43,6 @@ export default {
     'a-col': Col,
     'a-card': Card,
     'a-button': Button,
-    'a-input': Input,
     'a-textarea': Input.TextArea
   },
   data () {
