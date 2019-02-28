@@ -103,7 +103,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     //   // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
     //   allChunks: true,
     // }),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
     new MiniCssExtractPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css')
     }),
