@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Css from '@/pages/css'
-import Javascript from '@/pages/javascript'
+import Css from '../pages/css'
+import Javascript from '../pages/javascript'
 
 Vue.use(Router)
 

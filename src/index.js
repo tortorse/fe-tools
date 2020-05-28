@@ -16,7 +16,7 @@ Vue.use(VueAnalytics, {
     pageviewTemplate (route) {
       return {
         title: route.name,
-        page: `/fe-tools/#${route.path}`,
+        page: route.path,
         location: window.location.href
       }
     }
