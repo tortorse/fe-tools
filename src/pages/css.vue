@@ -6,16 +6,32 @@
         :title="$t('m.css.inputTitle')"
       >
         <a-textarea
+          v-model="inputCss"
           :placeholder="$t('m.css.inputPlaceholder')"
           :rows="30"
-          v-model="inputCss"
         />
       </a-card>
     </a-col>
     <a-col :span="4">
-      <a-row type="flex" justify="center" style="margin-top:64px;">
-        <a-button @click="beautify" style="width:100%;margin-bottom:8px;" :disabled="disabled">{{ $t('m.css.beautifyButton')}}</a-button>
-        <a-button @click="reset" style="width:100%;" :disabled="disabled">{{ $t('m.css.resetButton') }}</a-button>
+      <a-row
+        type="flex"
+        justify="center"
+        style="margin-top:64px;"
+      >
+        <a-button
+          style="width:100%;margin-bottom:8px;"
+          :disabled="disabled"
+          @click="beautify"
+        >
+          {{ $t('m.css.beautifyButton') }}
+        </a-button>
+        <a-button
+          style="width:100%;"
+          :disabled="disabled"
+          @click="reset"
+        >
+          {{ $t('m.css.resetButton') }}
+        </a-button>
       </a-row>
     </a-col>
     <a-col :span="10">
@@ -24,15 +40,14 @@
         :title="$t('m.css.outputTitle')"
       >
         <a-textarea
+          v-model="outputCss"
           :placeholder="$t('m.css.outputPlaceholder')"
           :rows="30"
-          readOnly
-          v-model="outputCss"
+          readonly
         />
       </a-card>
     </a-col>
   </a-row>
-
 </template>
 <script>
 import beautify from 'js-beautify'
@@ -58,7 +73,10 @@ export default {
   },
   methods: {
     beautify () {
-      this.outputCss = beautify.css(this.inputCss, { 'indent_size': 2, 'indent_char': ' ' })
+      this.outputCss = beautify.css(this.inputCss, {
+        indent_size: 2,
+        indent_char: ' '
+      })
     },
     reset () {
       this.inputCss = ''
