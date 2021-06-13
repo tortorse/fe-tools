@@ -1,0 +1,36 @@
+
+#layout-custom-trigger .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+#layout-custom-trigger .trigger:hover {
+  color: #1890ff;
+}
+#layout-custom-trigger .logo {
+  height: 64px;
+  line-height: 64px;
+  padding-left: 24px;
+  transition: all 0.3s;
+  background: #002140;
+  overflow: hidden;
+  color: orange;
+  font-size: 32px;
+}
+#layout-custom-trigger .logo h1 {
+  display: inline-block;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  font-family: "Myriad Pro", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  position: relative;
+  top: -6px;
+}
+
+
+#app {
+  height: 100%;
+}
+
